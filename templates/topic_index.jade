@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Topics
+    link(href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto", rel="stylesheet")
+    link(href='https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css', rel='stylesheet')
+    link(href='/style/app.css', rel='stylesheet')
+    
+  body.topic-index
+    .wrapper
+      header.pf
+        h1 topics
+      ol
+        for topic in topics
+          li(id="topic-#{topic.tid}").roboto
+            .title
+              a(href=topic.slug)=topic.title
+            .author=topic.username
+            .timestamp=topic.pretty_ts
+            .post-count=topic.postcount
+            
+          

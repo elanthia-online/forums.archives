@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Fixing GO2 for a room</title><link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet"/><link href="/style/app.css" rel="stylesheet"/></head><body><div class="wrapper"><header class="pf"><h1>Fixing GO2 for a room</h1><div class="info"><div class="post-count">8</div></div></header><article id="post-1437" class="roboto"><div class="info"><div class="author">darconas</div><div class="timestamp">Saturday, August 12th, 2017, 10:18:41 AM</div></div><div class="content"><p>I noticed a couple of instances where the room is screwed up in narost and/or GO2.  </p>
+
+<p>In one instance, there's 2 room numbers for the same room which messes things up.</p>
+
+<p>In another instance, the room exit is jump rock, but go2 for some reason does not recognize that as a path.</p>
+
+<p>Any ideas on how to fix this?  Is there an option in GO2 to update the room database or something?</p></div></article><article id="post-1438" class="roboto"><div class="info"><div class="author">Alastir</div><div class="timestamp">Saturday, August 12th, 2017, 10:27:38 AM</div></div><div class="content"><p>@darconas said in <a href="/post/1437">Fixing GO2 for a room</a>:</p>
+
+<blockquote>
+  <p>I noticed a couple of instances where the room is screwed up in narost and/or GO2.  </p>
+  
+  <p>In one instance, there's 2 room numbers for the same room which messes things up.</p>
+  
+  <p>In another instance, the room exit is jump rock, but go2 for some reason does not recognize that as a path.</p>
+  
+  <p>Any ideas on how to fix this?  Is there an option in GO2 to update the room database or something?</p>
+</blockquote>
+
+<p>Provide the following:
+- Room number that is broken.
+- What is does
+- What it should do</p></div></article><article id="post-1443" class="roboto"><div class="info"><div class="author">darconas</div><div class="timestamp">Saturday, August 12th, 2017, 11:11:22 AM</div></div><div class="content"><p>@alastir </p>
+
+<p>Aradhul road in EN - going from tavaalor side room 16745 to 16746 requires you to jump rock but go2 will instead try to jump over the bridge, go back to illstim, take the ferry to vaalor, and then go thru cemetary to get to that room.</p>
+
+<p>In Landing the glacier area, narosts list one of the rooms as #2567 (between 2568 and 2566) but in game, it shows up on ;rnum as 26005 instead so messes up with pathing/wander/etc</p>
+
+<p>Those are just a couple of examples</p></div></article><article id="post-1580" class="roboto"><div class="info"><div class="author"></div><div class="timestamp">Sunday, August 13th, 2017, 1:51:25 PM</div></div><div class="content"><p>@darconas 
+If I'm not mistaken, the use of the path is correlated to using the Ta'Illistim &lt;> Ta'Vaalor shortcut.  But having a flag control whether or not to use the rock wall, it will determine the best path to use.</p>
+
+<p>Some other examples are likely related to room description/map database changes and whatnot.</p></div></article><article id="post-1652" class="roboto"><div class="info"><div class="author">Alastir</div><div class="timestamp">Sunday, August 13th, 2017, 6:23:11 PM</div></div><div class="content"><p>@whirlin said in <a href="/post/1580">Fixing GO2 for a room</a>:</p>
+
+<blockquote>
+  <p>@darconas 
+  If I'm not mistaken, the use of the path is correlated to using the Ta'Illistim &lt;> Ta'Vaalor shortcut.  But having a flag control whether or not to use the rock wall, it will determine the best path to use.</p>
+  
+  <p>Some other examples are likely related to room description/map database changes and whatnot.</p>
+</blockquote>
+
+<p>I don't think it's a short cut issue.  It keeps being fixed, and then someone goes in and breaks it again.</p>
+
+<p>I wish there were APPROVED map changers so any Tom, Dick or Harry couldn't go in and break things.</p></div></article><article id="post-1669" class="roboto"><div class="info"><div class="author">darconas</div><div class="timestamp">Sunday, August 13th, 2017, 10:15:42 PM</div></div><div class="content"><p>@whirlin From what i can tell, someone set the timeto for the rock path to be extremely long to convince go2 to use the ferry instead (otherwise people will then fall whenever they travel between the two cities when using the bridge shortcut).  </p>
+
+<p>However, the flaw is that they should've used the bridge jumping for the timeto (which is really the dangerous path), not the rock wall because now the rock wall screws up taavaalor pathing.  So ideally, the solution is to fix the jump rock room but increase the time for the bridge jumping or ideally, add a flag to use the shortcut.</p></div></article><article id="post-1671" class="roboto"><div class="info"><div class="author">darconas</div><div class="timestamp">Sunday, August 13th, 2017, 10:25:38 PM</div></div><div class="content"><p>@whirlin @Alastir  Ah nevermind, i figured out the issue, I wasn't using the bridge shortcut option on go2, so it kept going around.  Now it works well.  Forget this thread!</p>
+
+<p>Thanks.</p></div></article><article id="post-2082" class="roboto"><div class="info"><div class="author">Cigger</div><div class="timestamp">Thursday, August 17th, 2017, 10:13:08 AM</div></div><div class="content"><p>on a side note, there should be an option on go2 to take the shortcut, but instead of jumping, you can climb down to the river and swim across. that would be sweet</p></div></article></div></body></html>

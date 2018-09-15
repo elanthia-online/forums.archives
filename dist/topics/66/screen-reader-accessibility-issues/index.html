@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Screen Reader Accessibility Issues</title><link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet"/><link href="/style/app.css" rel="stylesheet"/></head><body><div class="wrapper"><header class="pf"><h1>Screen Reader Accessibility Issues</h1><div class="info"><div class="post-count">18</div></div></header><article id="post-289" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 9:22:09 AM</div></div><div class="content"><p>Just a note that the current UI configuration you have setup here has some accessibility issues for users of assistive technology (screen reader programs such as JAWS). I am not sure how easy it would be to make changes to out-of-the-box layouts like this, though. I work in web development for accessibility, however, and I'm blind myself.</p>
+
+<p>A brief list of the issues:
+- No text label on the Search button.
+This can be fixed with an aria-label attribute.
+- Many other links with no accurate text label that I am assuming are images/icons of some sort.
+Rule of thumb: if there is an image, provide an alternative text label using aria-label or visually hidden text in a span. Mouseover/mousehover text is not read by a screen reader and does not count.
+- No headers/regions/landmarks at the beginning of each reply in a post.
+This makes it difficult to jump from reply to reply.
+If you don't want to use an actual h2/h3 for visual reasons, you can use role="heading" on any span or div and that will be noted as a heading for a screen reader.
+- Some items are not properly setup with keyboard access.
+The "compose..." interactable above the text box in this post box is not set up properly. It must be a clickable span or div or something - it needs to be ensured to be keyboard accessible with a tabindex and also with role="button" or role="link"</p>
+
+<p>There are probably more things that I haven't noticed yet as I haven't tried all the features, though one of the usual culprits is also not properly indicating to a screen reader when something is selected or expandable, which is also an easy fix if you can actually make changes to the layout code.</p>
+
+<p>As an example, this is what I see in that ul (unordered list) of unlabelled links/images at the top of this page:
+List of 8 items
+Link
+Link 42 ? 42
+Link
+Link
+Link
+Link
+Link
+Link</p>
+
+<p>(The above is all in a navigation region, but none of the links have text labels so it is impossible to tell what these links do. There are unlabelled links like these scattered all over the layout.)</p></div></article><article id="post-290" class="roboto"><div class="info"><div class="author">ArchSenex</div><div class="timestamp">Tuesday, August 8th, 2017, 9:26:47 AM</div></div><div class="content"><p>Finding themes is on the to-do list, to my knowledge.  To repeat what I was suggested, do you know of a good accessible theme that works for nodebb?</p></div></article><article id="post-292" class="roboto"><div class="info"><div class="author">Flimbo</div><div class="timestamp">Tuesday, August 8th, 2017, 9:33:05 AM</div></div><div class="content"><p>Solid points, Livdera. This is completely unrelated, but if you get a chance, could you give a site I'm working on a quick once over with the reader? I've a friend who usually does it but he's on vacation until the 21st. www.labreesbakery.com - Everything should work well with a reader. My only two concerns are the slider at the top and also the social media buttons at the top. They are text labeled, but I'm not sure they're text labeled in a way that's front facing, especially with the java that runs the slider.</p>
+
+<p>Edit: Also I know there are six images that are just text labeled as "Large Image" at the moment. That's intentional as they're placeholders.</p></div></article><article id="post-293" class="roboto"><div class="info"><div class="author"></div><div class="timestamp">Tuesday, August 8th, 2017, 9:37:28 AM</div></div><div class="content"><p>Can you check the categories button?  I added an alias in the mod console, and would like to confirm it before adding it to others.  There is already configured hover-over text, but per your second post, but, doesn't look like that's what you're looking for.</p></div></article><article id="post-300" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 9:50:34 AM</div></div><div class="content"><p>@Flimbo 
+If I get a chance later in the day, I'll take a peek.</p>
+
+<p>@Whirlin Where is this Categories button and I can take a look?</p>
+
+<p>And no, mousehover/mouseover text is not adequate. Keyboard users don't use a mouse, so the "title" attribute is not read.</p>
+
+<p>aria-label works as a screen-reader only text label.</p>
+
+<p>WAI-ARIA is the name of the list of attributes for screen readers.</p>
+
+<p>WebAIM also has a tool you can run the code through and it tells you all the things that are wrong.</p>
+
+<p>Couple other issues I noticed:
+- The button after the "Reply" button is unlabelled. Not sure what it does.
+- The list of forum posts seem like they should be in a table format (there are column headers across the top for topic, etc.) but the screen reader is not indicating them as a table and I can't navigate by column or row.
+I haven't checked the source code, but if this is divs/spans using CSS to appear as a table, some role attributes can be added to them.
+If it is using table code (table/td/th, etc.), it may still need role attributes. I've seen certain table attributes such as width=100% break the table layout for a screen reader.
+Table element (or what would be a table element): role="grid"
+Th element (or what would be a th element): role="columnheader"
+Tr element (or what would be a tr element): role="row"
+Td element (or what would be a td element): role="gridcell"</p></div></article><article id="post-301" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 9:53:15 AM</div></div><div class="content"><p>As an addendum - the collapse/expand stuff seems to be working.</p>
+
+<p>I noticed at the top of the page when I got a notification about responses here I saw (this obviously needs a text label, too!):
+Link 1 ?1</p>
+
+<p>And when I hit enter on it, it expanded and I was able to hit enter on the notification.</p>
+
+<p>It is just the links that don't have proper labels.</p></div></article><article id="post-302" class="roboto"><div class="info"><div class="author"></div><div class="timestamp">Tuesday, August 8th, 2017, 9:54:41 AM</div></div><div class="content"><p>Imagines in our sticky top navigation that I thought you were referring to.</p>
+
+<p>There are other problems here though, will add it to the backlog.  Once we determine eventual skin, we'll evaluate whether it's an attribute of the skin or underlying code, and go from there,</p></div></article><article id="post-307" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 10:09:55 AM</div></div><div class="content"><p>@Whirlin It might be those images.</p>
+
+<p>Whatever is in an unordered list (ul) and seems to be images of some sort. All I can tell there are 8 elements.</p>
+
+<p>I'm available for feedback on things if needed when it comes to the new skin/layout.</p>
+
+<p>Is there a "Recent Posts" link somewhere? Can't seem to find it.</p></div></article><article id="post-310" class="roboto"><div class="info"><div class="author"></div><div class="timestamp">Tuesday, August 8th, 2017, 10:12:58 AM</div></div><div class="content"><p>And none of those UL objects now have proper tags?  Just tried adding one to only the categories ones. hmm..</p>
+
+<p>Recent Posts is something we're working on, right now,  it's just updated threads.  We have a way of delivering it, but it ends up being a side bar frame, and a terrible end user experience.</p></div></article><article id="post-311" class="roboto"><div class="info"><div class="author">Alastir</div><div class="timestamp">Tuesday, August 8th, 2017, 10:14:54 AM</div></div><div class="content"><p>@livderaderalleur </p>
+
+<p>The list of 8 is a header at the top of the page, the first link is categories, the second link is unread posts, the third link is recent, the fourth link is tags, the fifth link is popular, the sixth link is users, the seventh link is groups and the eighth link is search.  </p>
+
+<p>The next link after that is some kind of index thing that I'm not sure what it does yet.  Then you'll have another search link, a notifications link, a chat link and then a profile link.</p></div></article><article id="post-313" class="roboto"><div class="info"><div class="author"></div><div class="timestamp">Tuesday, August 8th, 2017, 10:16:22 AM</div></div><div class="content"><p>The 10 out of 10  (should now be 11/11) is used to navigate between the posts on the page and to give you a rough estimate of how much you've read in a given topic.  It's super useful on mobile viewing.</p>
+
+<p>But you're right on the redundancy of searching.  Let me do that!</p></div></article><article id="post-314" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 10:18:34 AM</div></div><div class="content"><p>@Whirlin 
+If you're putting it on the ul element itself, it won't work.</p>
+
+<p>I am assuming it has an a tag inside the ul element. The aria-label needs to go on the a element/anchor tag. The thing that is actually the link.</p></div></article><article id="post-315" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 10:20:00 AM</div></div><div class="content"><p>@Alastir 
+Thanks for that. At least I know what the links are now!</p>
+
+<p>And @Whirlin. I wondered what that was and figured it must have something to do with the posts.</p></div></article><article id="post-316" class="roboto"><div class="info"><div class="author">Alastir</div><div class="timestamp">Tuesday, August 8th, 2017, 10:25:07 AM</div></div><div class="content"><p>@livderaderalleur </p>
+
+<p>There are several ways to modify the look or layout of pages.  There's a front-end and a back-end way.  I'm guessing the issues you're experiencing are going to have to be addressed on the back end where the actual code lies.</p></div></article><article id="post-318" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 10:32:05 AM</div></div><div class="content"><p>@Alastir I figured as much. I've had to work with out of the box pre-build code at my work and it's always the biggest PITA to work with as a majority don't consider accessibility and then it's difficult making changes without breaking potential upgrades in the future.</p>
+
+<p>At least this should hopefully be easier to alter since it is just the layout code (I hope!)</p></div></article><article id="post-319" class="roboto"><div class="info"><div class="author">ondreian</div><div class="timestamp">Tuesday, August 8th, 2017, 10:35:57 AM</div></div><div class="content"><p>accessibility is a priority, and when I have time to work on the theme more generally I will make sure that i address adding aria attributes wherever is necessary to enhance accessibility.</p></div></article><article id="post-389" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Tuesday, August 8th, 2017, 2:32:15 PM</div></div><div class="content"><p>Props for the <em>priceless</em> feedback and the way it's being handled. +100</p></div></article><article id="post-394" class="roboto"><div class="info"><div class="author">LivderaDeralleur</div><div class="timestamp">Tuesday, August 8th, 2017, 2:54:03 PM</div></div><div class="content"><p>@ondreian Thanks much!</p>
+
+<p>I can thankfully still access most of the pertinent functionality alright - just needs a bit of polishing and labels in certain places to make stellar. I think I find the lack of headers delineating the beginning of each reply in a post to be the most difficult to get used to, the rest I've been able to workaround well enough for now.</p></div></article></div></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Collaborative Scripts Initiative</title><link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet"/><link href="/style/app.css" rel="stylesheet"/></head><body><div class="wrapper"><header class="pf"><h1>Collaborative Scripts Initiative</h1><div class="info"><div class="post-count">1</div></div></header><article id="post-8294" class="roboto"><div class="info"><div class="author">ondreian</div><div class="timestamp">Wednesday, January 17th, 2018, 12:28:44 PM</div></div><div class="content"><h2>Why?</h2>
+
+<p>A couple of months ago after discussing frustrations with the current collaboration workflow with a few other authors, I had a "hold my beer" moment and decided that an automatic CI service like Travis could probably solve these issues and allow script authors to make shared commits, and eliminate the headache of publishing these commits.</p>
+
+<p>Subsequently <a href="https://github.com/elanthia-online/scripts">this repo</a> was born under the "Elanthia Online" banner.  </p>
+
+<p>I'm currently using it to publish the <a href="https://forums.elanthia.online/topic/532/the-playershop-project-unofficial/17">Shopkeeper Project script</a> that keeps Playershops updated around every hour (thanks to @Evarin for maintaining/building the characters of course), so that if I disappear for a couple of months someone else can maintain it since it's an important project.</p>
+
+<p><a href="https://travis-ci.org/elanthia-online/scripts">checkout the current build status</a></p>
+
+<p>However, I want to make the utility of this service to anyone that wishes to participate in this initiative.  </p>
+
+<p>It's a great way to give the community the ability to maintain your scripts if you like to take frequent breaks.</p>
+
+<h2>How do I participate?</h2>
+
+<p>Checkout the <a href="https://github.com/elanthia-online/scripts/blob/master/README.md">README.md</a> in the repo</p>
+
+<h2>Who is admin?</h2>
+
+<p>Myself and @horibu (Tysong) are currently the only admins, but I am open to other federated options if it helps keep things running for the community.</p>
+
+<h2>how does it work?</h2>
+
+<p>It uses <code>git diff</code> to check the history of files over a git range, looking for <code>.lic</code> files that have updates and publishes them to the ;repo under the <code>elanthia-online</code> user</p>
+
+<p>The workflow is more or less the same as a Github bot user, if you do these sorts of things professional.</p></div></article></div></body></html>

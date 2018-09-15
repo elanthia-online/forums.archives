@@ -1,0 +1,11 @@
+#!/bin/bash
+RDB_PATH="data/elanthia_online_forums.rdb"
+ARGS="-c json --type hash --key"
+
+if [ -f $RDB_PATH ]; then
+  rdb $ARGS "topic:\d+$" $RDB_PATH > data/topics.json
+  rdb $ARGS "user:\d+$" $RDB_PATH > data/users.json
+  rdb $ARGS "post:\d+$" $RDB_PATH > data/posts.json
+else
+  echo "$RDB_PATH does not seem to exist you need a copy"
+fi

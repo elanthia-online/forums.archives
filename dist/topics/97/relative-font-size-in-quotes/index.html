@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Relative Font Size in Quotes</title><link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet"/><link href="/style/app.css" rel="stylesheet"/></head><body><div class="wrapper"><header class="pf"><h1>Relative Font Size in Quotes</h1><div class="info"><div class="post-count">18</div></div></header><article id="post-614" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Wednesday, August 9th, 2017, 2:19:36 PM</div></div><div class="content"><p>When someone has quoted another message, the quote appears in a much larger font than the actual post does.</p>
+
+<p>It took me until just now to realize it. i was registering a general confusion of comprehension as I was reading messages and trying to decipher what was being talked about.</p>
+
+<p>I kinda think this is a UX gotcha. If someone were using the quote for a callout on a long piece, the larger font would make sense.</p>
+
+<p>But when it is a reference to something that is now going to be further addressed, it just makes my brain hurt, I guess.</p>
+
+<p>I'm hoping there's an easy CSS fix to this.</p></div></article><article id="post-616" class="roboto"><div class="info"><div class="author">Flimbo</div><div class="timestamp">Wednesday, August 9th, 2017, 2:37:09 PM</div></div><div class="content"><p>Should just be a quick rem size change in the theme css if they want to change it, yeah.</p>
+
+<p>Edit: in the meantime, and you may already know of it, while it's not a perfect fix: Hold control and roll your mouse ball to change the size of sites/text in most browsers</p></div></article><article id="post-621" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Wednesday, August 9th, 2017, 2:48:10 PM</div></div><div class="content"><p>But those Windows instructions won't help just one style of text, that's the whole ball of wax...</p></div></article><article id="post-622" class="roboto"><div class="info"><div class="author">Flimbo</div><div class="timestamp">Wednesday, August 9th, 2017, 2:49:40 PM</div></div><div class="content"><p>Yeah it's by no means a full on solution for that particular issue. But it would help with...somebody else's issue where they mentioned the text in general was too big on this theme and I forgot to say anything, so, better late and in the wrong place than never! Also, whoever said that: Blame cell phones and tablets. That's why everything's all huge texted.</p></div></article><article id="post-641" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 3:29:02 PM</div></div><div class="content"><p>I hate how quotes are done here. vBulletin does it way better.</p></div></article><article id="post-643" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Wednesday, August 9th, 2017, 3:31:34 PM</div></div><div class="content"><p>@flimbo </p>
+
+<blockquote>
+  <p>Blame cell phones and tablets. That’s why everything’s all huge texted.</p>
+</blockquote>
+
+<p>... and Retina displays.</p>
+
+<p>RESPONSIVE is a goal, and dang, not an easy one these days.</p></div></article><article id="post-716" class="roboto"><div class="info"><div class="author">ondreian</div><div class="timestamp">Wednesday, August 9th, 2017, 5:26:12 PM</div></div><div class="content"><p>the responsiveness issues with regards to text and whitespace will be honed eventually, there are major updates planned for this weekend that are currently in staging and we are verifying there are no problems.</p>
+
+<p>After that happens we will reassess what needs to be done.</p>
+
+<p>Please realize (and we the admins all made this mistake first) it is no easy task to simply install a plugin, the NodeBB plugin space is very large with a lot of varying quality of code.  We made the mistake of willynilly turning plugins on initially in our glee of customization and accidentally borked the live database, and while I have rolling hourly backups to S3 running, I would prefer not to have to use them and have unscheduled downtime.</p>
+
+<p>I already added a good bit of custom css to make it more friendly to the mobile experience, and your general critiques about margins and paddings being "off" are not incorrect, they are not a critical issue compared to some others.</p></div></article><article id="post-723" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 5:34:34 PM</div></div><div class="content"><p>Single quotes aren't so bad, but nested quotes are god-damn awful.</p></div></article><article id="post-766" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Wednesday, August 9th, 2017, 7:00:31 PM</div></div><div class="content"><p>Just make the blockquote style the same size text as everything else...</p></div></article><article id="post-769" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 7:11:23 PM</div></div><div class="content"><p>@luxelle said in <a href="/post/643">Relative Font Size in Quotes</a>:</p>
+
+<blockquote>
+  <p>@flimbo </p>
+  
+  <blockquote>
+    <p>Blame cell phones and tablets. That’s why everything’s all huge texted.</p>
+  </blockquote>
+  
+  <p>... and Retina displays.</p>
+  
+  <p>RESPONSIVE is a goal, and dang, not an easy one these days.</p>
+</blockquote>
+
+<p>But see how this nests them? Your name appears far removed from what you said. vBulletin always lists the person's name right above their text.</p></div></article><article id="post-771" class="roboto"><div class="info"><div class="author">Alastir</div><div class="timestamp">Wednesday, August 9th, 2017, 7:13:52 PM</div></div><div class="content"><blockquote>
+  <p>@flimbo said in <a href="/post/">Relative Font Size in Quote</a>:</p>
+  
+  <p>Blame cell phones and tablets. That’s why everything’s all huge texted.</p>
+  
+  <p>@luxelle said in <a href="/post/643">Relative Font Size in Quotes</a>:</p>
+  
+  <p>... and Retina displays.</p>
+  
+  <p>RESPONSIVE is a goal, and dang, not an easy one these days.</p>
+</blockquote>
+
+<p>@mogonis said in <a href="/post/769">Relative Font Size in Quotes</a>:</p>
+
+<blockquote>
+  <p>But see how this nests them? Your name appears far removed from what you said. vBulletin always lists the person's name right above their text.</p>
+</blockquote>
+
+<p>Testing</p></div></article><article id="post-772" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 7:14:30 PM</div></div><div class="content"><p>It doesn't work at all! Too much eye movement to make sense of what's happening.</p></div></article><article id="post-773" class="roboto"><div class="info"><div class="author">allereli</div><div class="timestamp">Wednesday, August 9th, 2017, 7:18:03 PM</div></div><div class="content"><p>@mogonis said in <a href="/post/769">Relative Font Size in Quotes</a>:</p>
+
+<blockquote>
+  <p>But see how this nests them? Your name appears far removed from what you said. vBulletin always lists the person's name right above their text.</p>
+</blockquote>
+
+<p>Not really, it used quote bubbles to make the quote in the quote clearer. I was never a big fan of the forced italicizing.</p>
+
+<p><img src="/assets/uploads/files/1502320943597-vbul-resized.jpg" alt="0<em>1502320926764</em>vbul.jpg" title="" /></p></div></article><article id="post-776" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 7:22:35 PM</div></div><div class="content"><p>I figure vBulletin italicizes to help separate the quoted text from the normal response text. The quotes here might look better without the vertical bars. Too much visual information. I like the bubble method more than the bars.</p></div></article><article id="post-777" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 7:23:31 PM</div></div><div class="content"><p>@allereli said in <a href="/post/773">Relative Font Size in Quotes</a>:</p>
+
+<blockquote>
+  <p>@mogonis said in <a href="/post/769">Relative Font Size in Quotes</a>:</p>
+  
+  <blockquote>
+    <p>But see how this nests them? Your name appears far removed from what you said. vBulletin always lists the person's name right above their text.</p>
+  </blockquote>
+  
+  <p>Not really, it used quote bubbles to make the quote in the quote clearer. I was never a big fan of the forced italicizing.</p>
+  
+  <p><img src="/assets/uploads/files/1502320943597-vbul-resized.jpg" alt="0<em>1502320926764</em>vbul.jpg" title="" /></p>
+</blockquote>
+
+<p>You're right, but my misconception of how they're formatted still shows they're better, heh. The horizontal separation is a lot clearer than the vertical bars on the left.</p></div></article><article id="post-778" class="roboto"><div class="info"><div class="author">allereli</div><div class="timestamp">Wednesday, August 9th, 2017, 7:25:49 PM</div></div><div class="content"><p>@mogonis said in <a href="/post/777">Relative Font Size in Quotes</a>:</p>
+
+<blockquote>
+  <p>You're right, but my misconception of how they're formatted still shows they're better, heh. The horizontal separation is a lot clearer than the vertical bars on the left.</p>
+</blockquote>
+
+<p>Along that line, I can barely tell when a sig is a sig besides the repetition from previous posts.</p></div></article><article id="post-779" class="roboto"><div class="info"><div class="author">Mogonis</div><div class="timestamp">Wednesday, August 9th, 2017, 7:27:42 PM</div></div><div class="content"><p>Yeah, sigs could definitely be improved.</p></div></article><article id="post-845" class="roboto"><div class="info"><div class="author">Luxelle</div><div class="timestamp">Wednesday, August 9th, 2017, 10:57:27 PM</div></div><div class="content"><p>Tadah! quotes are the same size font. You guys rock!</p></div></article></div></body></html>
