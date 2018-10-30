@@ -1,2 +1,1 @@
-# /topic/557/caligos-island-history-loresongs/14 -> /topics/557/caligos-island-history-loresongs/#post-14
-/topic/:topic_id/:slug/:post_anchor  /topics/:topic_id/:slug !301
+/topic/:topic_id/:slug/:post_anchor  /topics/:topic_id/:slug
